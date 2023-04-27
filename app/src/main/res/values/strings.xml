@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Humanitare</string>
+    <string name="txt_welcome">Dobrodošli</string>
+    <string name="txt_welcome_subtitle">Pomoći potrebitima nikad nije bilo lakše</string>
     <string name="txt_no_wallet"><u>Nemam još kripto novčanik</u></string>
+    <string name="btn_landing_text"><u>Spremi</u></string>
+    <string name="txt_landing_hint"><u>Wallet address</u></string>
+    <string name="txt_landing_content_description"><u>Logo image</u></string>
 </resources>
