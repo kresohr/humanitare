@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Humanitare</string>
+    <string name="txt_no_wallet"><u>Nemam još kripto novčanik</u></string>
 </resources>
