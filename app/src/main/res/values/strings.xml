@@ -1,9 +1,20 @@
 <resources>
     <string name="app_name">Humanitare</string>
-    <string name="txt_welcome">Dobrodošli</string>
+    <string name="txt_welcome_heading">Dobrodošli</string>
     <string name="txt_welcome_subtitle">Pomoći potrebitima nikad nije bilo lakše</string>
     <string name="txt_no_wallet"><u>Nemam još kripto novčanik</u></string>
     <string name="btn_landing_text"><u>Spremi</u></string>
+    <string name="btn_landing_skip_text"><u>Preskoči</u></string>
+    <string name="btn_charity_text"><u>Profil</u></string>
     <string name="txt_landing_hint"><u>Wallet address</u></string>
     <string name="txt_landing_content_description"><u>Logo image</u></string>
+    <string name="txt_tutorial_heading">Kako otvoriti kripto novčanik?</string>
+    <string name="txt_tutorial_option_one_heading">Opcija #1 - Kriptomjenjačnica</string>
+    <string name="txt_tutorial_option_one_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="txt_tutorial_option_two_heading">Opcija #2 - Mobilni novčanici</string>
+    <string name="txt_tutorial_option_two_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="txt_tutorial_option_three_heading">Opcija #3 - Desktop Novčanici</string>
+    <string name="txt_tutorial_option_three_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="txt_charity_list_heading">Lista udruga</string>
+
 </resources>

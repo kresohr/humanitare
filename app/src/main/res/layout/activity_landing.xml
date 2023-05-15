@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
             android:gravity="center"
-            android:text="@string/txt_welcome"
-            android:textSize="@dimen/text_large"
+            android:text="@string/txt_welcome_heading"
+            android:textSize="@dimen/text_xlarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgLogo" />
@@ -75,14 +75,26 @@
             app:layout_constraintTop_toBottomOf="@+id/txtWelcomeWalletLayout" />
 
         <Button
+            android:id="@+id/btnSaveWallet"
             android:layout_width="200dp"
             android:layout_height="65dp"
             android:backgroundTint="@color/black"
             android:text="@string/btn_landing_text"
-            android:layout_marginTop="@dimen/margin_xlarge"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/lblWelcomeNoWallet"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnSkip"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/btn_landing_skip_text"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/btnSaveWallet"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
