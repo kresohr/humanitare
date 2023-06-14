@@ -26,9 +26,11 @@ class ViewPagerAdapter(private val mockDataList: List<Organization>) : RecyclerV
     //Temporary mock data for debugging purposes
     companion object {
         private val mockDataList = listOf(
-            Organization("Title 1", "Description 1", R.drawable.medicine),
-            Organization("Title 2", "Description 2", R.drawable.medicine),
-            Organization("Title 3", "Description 3", R.drawable.medicine)
+            Organization("Fajter", "Vizija fajtera je unaprijediti društveni položaj i institucionalni okvir u kojem se nalaze beskućnici putem provedbe konkretnih društvenih akcija i projekata.", R.drawable.logo_fajter_min),
+            Organization("Noina Arka", " Osnovna djelatnost Udruge je pomoć napuštenim životinjama, te pomoć i potpora ljudima koji brinu o većem broju životinja.", R.drawable.logo_noina_arka_min),
+            Organization("Savao", "Udruga Savao nastoji pomoći ljudima u potrebi i na rubu društva. Osnovali su je volonteri iz pučke kuhinje Misionarki ljubavi u Zagrebu.", R.drawable.logo_savao_min),
+            Organization("SOS Djecje Selo", "Konceptom SOS Dječjeg sela naša je organizacija utrla put obiteljskom pristupu dugoročne skrbi napuštene djece i djece bez roditelja i odgovarajuće roditeljske skrbi.", R.drawable.logo_sos_djecje_selo_min),
+            Organization("Srce Split", "Naš cilj je unapređenje kvalitete života osoba s invaliditetom i njihovih obitelji.", R.drawable.logo_udruga_srce_split_min)
         )
 
         fun create() = ViewPagerAdapter(mockDataList)

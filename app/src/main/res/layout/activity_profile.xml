@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.LandingActivity">
+    tools:context=".view.ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,57 +13,48 @@
 
         <ImageView
             android:id="@+id/imgLogo"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:src="@drawable/logo"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/wallet"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/txt_landing_content_description" />
 
         <TextView
-            android:id="@+id/lblWelcomeTitle"
+            android:id="@+id/lblProfileTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
             android:gravity="center"
-            android:text="@string/txt_welcome_heading"
+            android:text="@string/txt_wallet_heading"
             android:textSize="@dimen/text_xlarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
-        <TextView
-            android:id="@+id/lblWelcomeSubtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/txt_welcome_subtitle"
-            android:textSize="@dimen/text_medium"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblWelcomeTitle" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtWelcomeWalletLayout"
+            android:id="@+id/txtProfileWalletLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginHorizontal="@dimen/margin_xlarge"
             android:hint="@string/txt_landing_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblWelcomeSubtitle">
+            app:layout_constraintTop_toBottomOf="@id/lblProfileTitle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtWelcomeWalletInput"
+                android:id="@+id/txtProfileWalletInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/lblWelcomeNoWallet"
+            android:id="@+id/lblProfileNoWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
@@ -72,31 +63,57 @@
             android:textSize="@dimen/text_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtWelcomeWalletLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileWalletLayout" />
+
+        <ImageView
+            android:id="@+id/imgEditWallet"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_pencil"
+            app:layout_constraintTop_toTopOf="@+id/txtProfileWalletLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/txtProfileWalletLayout"
+            app:layout_constraintEnd_toEndOf="@+id/txtProfileWalletLayout"
+            android:layout_marginRight="@dimen/margin_large"
+            android:visibility="gone"/>
 
         <Button
-            android:id="@+id/btnLandingSaveWallet"
+            android:id="@+id/btnSaveWallet"
             android:layout_width="200dp"
             android:layout_height="65dp"
             android:backgroundTint="@color/black"
             android:text="@string/btn_landing_text"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/lblWelcomeNoWallet"
-            android:layout_marginTop="@dimen/margin_xlarge"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btnSkip"
-            android:layout_width="200dp"
-            android:layout_height="65dp"
-            android:backgroundTint="@color/black"
-            android:text="@string/btn_landing_skip_text"
+            app:layout_constraintTop_toBottomOf="@id/lblProfileNoWallet"
             android:layout_marginTop="@dimen/margin_large"
-            android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/btnLandingSaveWallet"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/lblTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSaveWallet"
+            android:layout_marginHorizontal="@dimen/margin_xlarge"
+            android:text="@string/txt_wallet_transactions"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_large"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTransactions"
+            android:layout_marginHorizontal="@dimen/margin_xlarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lblTransactions"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

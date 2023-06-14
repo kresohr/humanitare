@@ -15,23 +15,26 @@
         android:id="@+id/lblCharityTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCharityProfile"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/margin_xlarge"
         android:gravity="center"
-        android:text="Humanitare"
+        android:text="@string/txt_charity_list_choose"
         android:textSize="@dimen/text_xlarge"/>
 
-    <ImageView
-        android:id="@+id/imgLogoCharity"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/medicine"
+    <TextView
+        android:id="@+id/txtLogoCharity"
+        android:text="@string/txt_charity_list_quote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lblCharityTitle"
         android:layout_marginTop="@dimen/margin_xlarge"
-        android:contentDescription="@string/txt_landing_content_description" />
+        android:contentDescription="@string/txt_landing_content_description"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:textAlignment="center"
+        android:textStyle="italic"/>
 
     <TextView
         android:id="@+id/lblCharityListTitle"
@@ -41,7 +44,7 @@
         android:gravity="center"
         android:text="@string/txt_charity_list_heading"
         android:textSize="@dimen/text_large"
-        app:layout_constraintTop_toBottomOf="@id/imgLogoCharity"
+        app:layout_constraintTop_toBottomOf="@id/txtLogoCharity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/viewPagerOrganizations"/>
@@ -51,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/lblCharityListTitle"
-        app:layout_constraintBottom_toTopOf="@id/btnCharityProfile"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="@dimen/margin_large"
         android:clipToPadding="false"
         android:paddingStart="16dp"
@@ -85,10 +88,9 @@
         android:layout_height="65dp"
         android:backgroundTint="@color/black"
         android:text="@string/btn_charity_text"
-        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_xlarge"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/viewPagerOrganizations"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

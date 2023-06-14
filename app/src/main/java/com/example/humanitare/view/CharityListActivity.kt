@@ -1,15 +1,14 @@
 package com.example.humanitare.view
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
-import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.humanitare.R
 import com.example.humanitare.adapter.ViewPagerAdapter
-import java.lang.Math.abs
 
 class CharityListActivity : AppCompatActivity() {
 
@@ -17,6 +16,7 @@ class CharityListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_charity_list)
 
+        val btnProfile = findViewById<Button>(R.id.btnCharityProfile)
         val arrowImgRight = findViewById<ImageView>(R.id.imgArrowRight)
         val arrowImgLeft = findViewById<ImageView>(R.id.imgArrowLeft)
         val viewPager2 = findViewById<ViewPager2>(R.id.viewPagerOrganizations)
@@ -55,6 +55,11 @@ class CharityListActivity : AppCompatActivity() {
             if (previousPosition >= 0) {
                 viewPager2.currentItem = previousPosition
             }
+        }
+
+        btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 }

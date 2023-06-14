@@ -84,7 +84,7 @@
             android:textSize="@dimen/text_small"
             android:text="@string/txt_tutorial_option_three_text"/>
         <Button
-            android:id="@+id/btnListOfOrganizations"
+            android:id="@+id/btnCharityOrganizations"
             android:layout_width="200dp"
             android:layout_height="65dp"
             android:backgroundTint="@color/black"
