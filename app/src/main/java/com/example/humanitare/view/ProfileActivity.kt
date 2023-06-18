@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.viewpager2.widget.ViewPager2
+import androidx.recyclerview.widget.RecyclerView
 import com.example.humanitare.R
 import com.google.android.material.textfield.TextInputLayout
 
@@ -24,6 +23,7 @@ class ProfileActivity : AppCompatActivity() {
         val lblNoWallet = findViewById<TextView>(R.id.lblProfileNoWallet)
         val imgEditWallet = findViewById<ImageView>(R.id.imgEditWallet)
         val lblTransaction = findViewById<TextView>(R.id.lblTransactions)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewTransactions)
 
         fun getWallet() {
             val sharedPreferences = getSharedPreferences("WalletAddress", MODE_PRIVATE)

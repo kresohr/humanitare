@@ -6,6 +6,7 @@
     <string name="txt_welcome_subtitle">Pomoći potrebitima nikad nije bilo lakše</string>
     <string name="txt_no_wallet"><u>Nemam još kripto novčanik</u></string>
     <string name="btn_landing_text"><u>Spremi</u></string>
+    <string name="btn_donate_text"><u>Doniraj</u></string>
     <string name="btn_landing_skip_text"><u>Preskoči</u></string>
     <string name="btn_charity_text"><u>Moj Profil</u></string>
     <string name="txt_landing_hint"><u>Enter wallet address</u></string>
@@ -21,4 +22,9 @@
     <string name="txt_charity_list_choose">Odaberite udrugu</string>
     <string name="txt_charity_list_quote">"Jedna od najvažnijih stvari koju možete učiniti na ovoj zemlji je dati ljudima do znanja da nisu sami."</string>
     <string name="txt_charity_profile_heading">Ime Udruge</string>
+    <string name="txt_charity_profile_description">Opis Udruge</string>
+    <string name="txt_charity_profile_balance">Stanje Računa:</string>
+    <string name="txt_charity_profile_total_transactions">Ukupno Transakcija:</string>
+    <string name="txt_charity_profile_balance_placeholder">- MATIC</string>
+    <string name="txt_charity_profile_transactions_placeholder">127</string>
 </resources>

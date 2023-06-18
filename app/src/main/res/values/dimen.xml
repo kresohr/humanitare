@@ -5,6 +5,7 @@
     <dimen name="margin_large">20dp</dimen>
     <dimen name="margin_xlarge">40dp</dimen>
     <dimen name="view_pager_item_margin">16dp</dimen>
+    <dimen name="text_description">16sp</dimen>
     <dimen name="text_small">14sp</dimen>
     <dimen name="text_medium">20sp</dimen>
     <dimen name="text_large">24sp</dimen>

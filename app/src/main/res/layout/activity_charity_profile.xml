@@ -12,7 +12,17 @@
         android:backgroundTint="@color/white">
 
         <ImageView
-            android:id="@+id/imgCharityLogo"
+            android:id="@+id/btnTransactionHistory"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/margin_normal"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_transaction_history"
+            />
+
+        <ImageView
+            android:id="@+id/imgCharityProfileLogo"
             android:layout_marginTop="@dimen/margin_xlarge"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -23,7 +33,7 @@
             android:contentDescription="@string/txt_landing_content_description" />
 
         <TextView
-            android:id="@+id/lblProfileTitle"
+            android:id="@+id/lblCharityProfileTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
@@ -32,86 +42,94 @@
             android:textSize="@dimen/text_xlarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgCharityLogo" />
+            app:layout_constraintTop_toBottomOf="@id/imgCharityProfileLogo" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtProfileWalletLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        <TextView
+            android:id="@+id/lblCharityProfileDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginHorizontal="@dimen/margin_xlarge"
-            android:hint="@string/txt_landing_hint"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:gravity="center"
+            android:text="@string/txt_charity_profile_description"
+            android:textSize="@dimen/text_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblProfileTitle">
+            app:layout_constraintTop_toBottomOf="@id/lblCharityProfileTitle" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtProfileWalletInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <View
+            android:id="@+id/separatorLineFirst"
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/lblCharityProfileDescription"/>
 
         <TextView
-            android:id="@+id/lblProfileNoWallet"
+            android:id="@+id/lblCharityAccountBalance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
-            android:text="@string/txt_no_wallet"
-            android:textColor="@color/link"
-            android:textSize="@dimen/text_small"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:text="@string/txt_charity_profile_balance"
+            android:textSize="@dimen/text_medium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtProfileWalletLayout" />
+            app:layout_constraintTop_toBottomOf="@id/separatorLineFirst" />
 
-        <ImageView
-            android:id="@+id/imgEditWallet"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_pencil"
-            app:layout_constraintTop_toTopOf="@+id/txtProfileWalletLayout"
-            app:layout_constraintBottom_toBottomOf="@+id/txtProfileWalletLayout"
-            app:layout_constraintEnd_toEndOf="@+id/txtProfileWalletLayout"
-            android:layout_marginRight="@dimen/margin_large"
-            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/txtAccountBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_description"
+            app:layout_constraintStart_toEndOf="@id/lblCharityAccountBalance"
+            app:layout_constraintTop_toTopOf="@id/lblCharityAccountBalance"
+            app:layout_constraintBottom_toBottomOf="@id/lblCharityAccountBalance"
+            android:text="@string/txt_charity_profile_balance_placeholder"
+            android:layout_marginLeft="@dimen/margin_normal"
+            />
+        <TextView
+            android:id="@+id/lblCharityTotalTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:text="@string/txt_charity_profile_total_transactions"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblCharityAccountBalance" />
+
+        <TextView
+            android:id="@+id/txtAccountTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_description"
+            app:layout_constraintStart_toEndOf="@id/lblCharityTotalTransactions"
+            app:layout_constraintTop_toTopOf="@id/lblCharityTotalTransactions"
+            app:layout_constraintBottom_toBottomOf="@id/lblCharityTotalTransactions"
+            android:text="@string/txt_charity_profile_transactions_placeholder"
+            android:layout_marginLeft="@dimen/margin_normal"
+            />
+
+        <View
+            android:id="@+id/separatorLineSecond"
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/lblCharityTotalTransactions"/>
 
         <Button
-            android:id="@+id/btnSaveWallet"
+            android:id="@+id/btnDonate"
             android:layout_width="200dp"
             android:layout_height="65dp"
-            android:backgroundTint="@color/black"
-            android:text="@string/btn_landing_text"
+            android:backgroundTint="@color/dark_blue"
+            android:text="@string/btn_donate_text"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/lblProfileNoWallet"
+            app:layout_constraintTop_toBottomOf="@id/separatorLineSecond"
             android:layout_marginTop="@dimen/margin_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:visibility="visible"/>
-
-        <TextView
-            android:id="@+id/lblTransactions"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/btnSaveWallet"
-            android:layout_marginHorizontal="@dimen/margin_xlarge"
-            android:text="@string/txt_wallet_transactions"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            android:layout_marginTop="@dimen/margin_large"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTransactions"
-            android:layout_marginHorizontal="@dimen/margin_xlarge"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/lblTransactions"
-            android:layout_marginTop="@dimen/margin_large"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            >
-
-        </androidx.recyclerview.widget.RecyclerView>
 
 
 

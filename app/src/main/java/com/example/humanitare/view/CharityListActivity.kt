@@ -9,8 +9,9 @@ import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.humanitare.R
 import com.example.humanitare.adapter.ViewPagerAdapter
+import com.example.humanitare.model.Organization
 
-class CharityListActivity : AppCompatActivity() {
+class CharityListActivity : AppCompatActivity(), ViewPagerAdapter.OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +21,7 @@ class CharityListActivity : AppCompatActivity() {
         val arrowImgRight = findViewById<ImageView>(R.id.imgArrowRight)
         val arrowImgLeft = findViewById<ImageView>(R.id.imgArrowLeft)
         val viewPager2 = findViewById<ViewPager2>(R.id.viewPagerOrganizations)
-        val adapter = ViewPagerAdapter.create()
+        val adapter = ViewPagerAdapter(ViewPagerAdapter.create(),this)
         viewPager2.adapter = adapter
 
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -61,5 +62,15 @@ class CharityListActivity : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onItemClick(organization: Organization) {
+        val intent = Intent(this, CharityProfileActivity::class.java).apply {
+            putExtra("organizationTitle", organization.title)
+            putExtra("organizationDescription", organization.description)
+            putExtra("organizationImageResId", organization.imageResId)
+            putExtra("organizationWalletAddress", organization.wallet)
+        }
+        startActivity(intent)
     }
 }
