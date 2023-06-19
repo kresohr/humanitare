@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DonateActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imgDonation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            app:lottie_fileName="donation.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+        <TextView
+            android:id="@+id/lblDonateHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_donation_header"
+            app:layout_constraintTop_toBottomOf="@+id/imgDonation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textSize="@dimen/text_xlarge"
+            android:textColor="@color/gray"
+            />
+        <TextView
+            android:id="@+id/lblDonateStepOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/txt_donation_step_one"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateStepOne"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/txt_donation_step_one_details"
+            android:textSize="@dimen/text_description"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -70,6 +70,8 @@ class CharityListActivity : AppCompatActivity(), ViewPagerAdapter.OnItemClickLis
             putExtra("organizationDescription", organization.description)
             putExtra("organizationImageResId", organization.imageResId)
             putExtra("organizationWalletAddress", organization.wallet)
+            putExtra("organizationFacebook", organization.facebook)
+            putExtra("organizationWebsite", organization.website)
         }
         startActivity(intent)
     }

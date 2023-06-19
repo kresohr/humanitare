@@ -76,7 +76,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/separatorLineFirst" />
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imgLoading"
+            app:layout_constraintStart_toEndOf="@+id/lblCharityAccountBalance"
+            app:layout_constraintTop_toBottomOf="@+id/separatorLineFirst"
+            app:layout_constraintBottom_toTopOf="@+id/separatorLineSecond"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:lottie_fileName="loading.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
         <TextView
+            android:visibility="gone"
             android:id="@+id/txtAccountBalance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,28 +98,6 @@
             android:text="@string/txt_charity_profile_balance_placeholder"
             android:layout_marginLeft="@dimen/margin_normal"
             />
-        <TextView
-            android:id="@+id/lblCharityTotalTransactions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginLeft="@dimen/margin_large"
-            android:text="@string/txt_charity_profile_total_transactions"
-            android:textSize="@dimen/text_medium"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lblCharityAccountBalance" />
-
-        <TextView
-            android:id="@+id/txtAccountTransactions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_description"
-            app:layout_constraintStart_toEndOf="@id/lblCharityTotalTransactions"
-            app:layout_constraintTop_toTopOf="@id/lblCharityTotalTransactions"
-            app:layout_constraintBottom_toBottomOf="@id/lblCharityTotalTransactions"
-            android:text="@string/txt_charity_profile_transactions_placeholder"
-            android:layout_marginLeft="@dimen/margin_normal"
-            />
 
         <View
             android:id="@+id/separatorLineSecond"
@@ -116,7 +105,7 @@
             android:layout_height="3px"
             android:layout_marginTop="@dimen/margin_large"
             android:background="@color/gray"
-            app:layout_constraintTop_toBottomOf="@id/lblCharityTotalTransactions"/>
+            app:layout_constraintTop_toBottomOf="@id/lblCharityAccountBalance"/>
 
         <Button
             android:id="@+id/btnDonate"
@@ -130,6 +119,58 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:visibility="visible"/>
+        <Button
+            android:id="@+id/btnCopyAddress"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:backgroundTint="@color/dark_blue"
+            android:text="@string/btn_copy_address"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/btnDonate"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_charity_profile_error"
+            android:layout_margin="@dimen/margin_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCopyAddress"
+            android:textColor="@color/error_red"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/txtErrorReminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_charity_profile_error_reminder"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtError"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/imgFacebook"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:layout_constraintTop_toBottomOf="@id/txtError"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            app:layout_constraintEnd_toStartOf="@id/imgWeb"
+            android:src="@drawable/ic_facebook"/>
+        <ImageView
+            android:id="@+id/imgWeb"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/txtError"
+            app:layout_constraintStart_toEndOf="@id/imgFacebook"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:src="@drawable/ic_browser"
+            />
 
 
 

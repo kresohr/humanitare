@@ -6,10 +6,11 @@
     <string name="txt_welcome_subtitle">Pomoći potrebitima nikad nije bilo lakše</string>
     <string name="txt_no_wallet"><u>Nemam još kripto novčanik</u></string>
     <string name="btn_landing_text"><u>Spremi</u></string>
-    <string name="btn_donate_text"><u>Doniraj</u></string>
+    <string name="btn_donate_text"><u>Kako Donirati ?</u></string>
+    <string name="btn_copy_address"><u>Kopiraj Adresu</u></string>
     <string name="btn_landing_skip_text"><u>Preskoči</u></string>
     <string name="btn_charity_text"><u>Moj Profil</u></string>
-    <string name="txt_landing_hint"><u>Enter wallet address</u></string>
+    <string name="txt_landing_hint"><u>Unesi adresu kripto novčanika</u></string>
     <string name="txt_landing_content_description"><u>Logo image</u></string>
     <string name="txt_tutorial_heading">Kako otvoriti kripto novčanik?</string>
     <string name="txt_tutorial_option_one_heading">Opcija #1 - Kriptomjenjačnica</string>
@@ -24,7 +25,11 @@
     <string name="txt_charity_profile_heading">Ime Udruge</string>
     <string name="txt_charity_profile_description">Opis Udruge</string>
     <string name="txt_charity_profile_balance">Stanje Računa:</string>
-    <string name="txt_charity_profile_total_transactions">Ukupno Transakcija:</string>
+    <string name="txt_charity_profile_error">ERROR: Ne mogu dohvatiti podatke s blockchaina.</string>
+    <string name="txt_charity_profile_error_reminder">Provjerite imate li valjanu internet vezu.</string>
     <string name="txt_charity_profile_balance_placeholder">- MATIC</string>
     <string name="txt_charity_profile_transactions_placeholder">127</string>
+    <string name="txt_donation_header">Kako donirati?</string>
+    <string name="txt_donation_step_one">1) Kopirati adresu kripto novčanika</string>
+    <string name="txt_donation_step_one_details">Adresa se automatski kopirala nakon što ste pritisnuli na "Doniraj" gumb na prošlom ekranu. Ako se odlučite za drugu udrugu, otvorite profil i pritisnite na "Kopiraj Adresu".</string>
 </resources>

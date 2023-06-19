@@ -33,11 +33,11 @@ class ViewPagerAdapter(private val mockDataList: List<Organization>, private val
     //Temporary mock data for debugging purposes
     companion object {
         private val mockDataList = listOf(
-            Organization("Fajter", "Vizija fajtera je unaprijediti društveni položaj i institucionalni okvir u kojem se nalaze beskućnici putem provedbe konkretnih društvenih akcija i projekata.", R.drawable.logo_fajter_min,  "0x5e6B2Abdfbe3cC6E3f9aCd148b834fE76d45Cb69"),
-            Organization("Noina Arka", " Osnovna djelatnost Udruge je pomoć napuštenim životinjama, te pomoć i potpora ljudima koji brinu o većem broju životinja.", R.drawable.logo_noina_arka_min, "0xD7f67A064d2fCE7536cb6403D5dc1110E00A4e7D"),
-            Organization("Savao", "Udruga Savao nastoji pomoći ljudima u potrebi i na rubu društva. Osnovali su je volonteri iz pučke kuhinje Misionarki ljubavi u Zagrebu.", R.drawable.logo_savao_min, "0x928a8188DD3bB8BdED265928234e0F7da3aCE2a0"),
-            Organization("SOS Djecje Selo", "Konceptom SOS Dječjeg sela naša je organizacija utrla put obiteljskom pristupu dugoročne skrbi napuštene djece i djece bez roditelja i odgovarajuće roditeljske skrbi.", R.drawable.logo_sos_djecje_selo_min, "0x15e6742dcCC72b9d8edD38A91cb30877d86B0b10"),
-            Organization("Srce Split", "Naš cilj je unapređenje kvalitete života osoba s invaliditetom i njihovih obitelji.", R.drawable.logo_udruga_srce_split_min, "0x432074E120ff63066021aD3674f55D8056DB1C44")
+            Organization("Fajter", "Vizija fajtera je unaprijediti društveni položaj i institucionalni okvir u kojem se nalaze beskućnici putem provedbe konkretnih društvenih akcija i projekata.", R.drawable.logo_fajter_min,  "0x5e6B2Abdfbe3cC6E3f9aCd148b834fE76d45Cb69", "https://web.facebook.com/udrugafajter/?locale=hr_HR&_rdc=1&_rdr", "https://udrugafajter.com/" ),
+            Organization("Noina Arka", " Osnovna djelatnost Udruge je pomoć napuštenim životinjama, te pomoć i potpora ljudima koji brinu o većem broju životinja.", R.drawable.logo_noina_arka_min, "0xD7f67A064d2fCE7536cb6403D5dc1110E00A4e7D", "https://web.facebook.com/noinaarka?_rdc=1&_rdr", "https://www.noina-arka.hr/"),
+            Organization("Savao", "Udruga Savao nastoji pomoći ljudima u potrebi i na rubu društva. Osnovali su je volonteri iz pučke kuhinje Misionarki ljubavi u Zagrebu.", R.drawable.logo_savao_min, "0x928a8188DD3bB8BdED265928234e0F7da3aCE2a0", "https://web.facebook.com/HUSavao/?_rdc=1&_rdr", "https://udrugasavao.hr/https://udrugasavao.hr/"),
+            Organization("SOS Djecje Selo", "Konceptom SOS Dječjeg sela naša je organizacija utrla put obiteljskom pristupu dugoročne skrbi napuštene djece i djece bez roditelja i odgovarajuće roditeljske skrbi.", R.drawable.logo_sos_djecje_selo_min, "0x15e6742dcCC72b9d8edD38A91cb30877d86B0b10", "https://web.facebook.com/sosdsh?_rdc=1&_rdr", "https://sos-dsh.hr/"),
+            Organization("Srce Split", "Naš cilj je unapređenje kvalitete života osoba s invaliditetom i njihovih obitelji.", R.drawable.logo_udruga_srce_split_min, "0x432074E120ff63066021aD3674f55D8056DB1C44", "https://web.facebook.com/udruga.srce/?_rdc=1&_rdr", "https://srce-cp-split.hr/")
         )
 
         fun create(): List<Organization> = mockDataList
