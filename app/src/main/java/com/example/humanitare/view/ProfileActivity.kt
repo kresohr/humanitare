@@ -57,7 +57,7 @@ class ProfileActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putString("wallet", walletValue)
             editor.apply()
-            Toast.makeText(this, "Wallet saved successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Uspješno pohranjena adresa", Toast.LENGTH_SHORT).show()
             btnSaveWallet.visibility = View.GONE
             txtWallet.clearFocus()
             getWallet()

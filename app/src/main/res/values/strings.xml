@@ -8,6 +8,7 @@
     <string name="btn_landing_text"><u>Spremi</u></string>
     <string name="btn_donate_text"><u>Kako Donirati ?</u></string>
     <string name="btn_copy_address"><u>Kopiraj Adresu</u></string>
+    <string name="btn_info_wallet"><u>Otvaranje Novcanika</u></string>
     <string name="btn_landing_skip_text"><u>Preskoči</u></string>
     <string name="btn_charity_text"><u>Moj Profil</u></string>
     <string name="txt_landing_hint"><u>Unesi adresu kripto novčanika</u></string>
@@ -22,6 +23,7 @@
     <string name="txt_charity_list_heading">Lista udruga</string>
     <string name="txt_charity_list_choose">Odaberite udrugu</string>
     <string name="txt_charity_list_quote">"Jedna od najvažnijih stvari koju možete učiniti na ovoj zemlji je dati ljudima do znanja da nisu sami."</string>
+    <string name="txt_charity_list_note">"Napomena: Pritiskom na udrugu otvara se njezin profil."</string>
     <string name="txt_charity_profile_heading">Ime Udruge</string>
     <string name="txt_charity_profile_description">Opis Udruge</string>
     <string name="txt_charity_profile_balance">Stanje Računa:</string>
@@ -31,5 +33,14 @@
     <string name="txt_charity_profile_transactions_placeholder">127</string>
     <string name="txt_donation_header">Kako donirati?</string>
     <string name="txt_donation_step_one">1) Kopirati adresu kripto novčanika</string>
-    <string name="txt_donation_step_one_details">Adresa se automatski kopirala nakon što ste pritisnuli na "Doniraj" gumb na prošlom ekranu. Ako se odlučite za drugu udrugu, otvorite profil i pritisnite na "Kopiraj Adresu".</string>
+    <string name="txt_donation_step_one_details">Adresa se kopira pritiskom na gumb "Kopiraj Adresu" na prošlom ekranu.</string>
+    <string name="txt_donation_step_two">2) Otvorite Vaš kripto novčanik</string>
+    <string name="txt_donation_step_two_details">Ako već nemate otvoren kripto novčanik, pritisnite na gumb `Otvaranje Novcanika` ispod ovog teksta. Ako imate novčanik, pokrenite aplikaciju i provjerite da ste na Polygon (MATIC) mreži ulančanih blokova.</string>
+    <string name="txt_donation_step_two_note">Primjer: Kako bi omogućili Polygon mrežu na MetaMask novčaniku, potrebno je u gornjem dijelu pritisnuti na "Ethereum Main Network", zatim "Add a network" i konačno dodati Polygon Mainnet.</string>
+    <string name="txt_donation_step_three">3) Zaljepiti adresu udruge</string>
+    <string name="txt_donation_step_three_details">Adresu koju ste prethodno kopirali je potrebno zaljepiti u primatelja i unijeti iznos koji donirate. Potvrdite transakciju i kriptovalute će biti donirane.</string>
+    <string name="txt_donation_end_heading">Čestitamo!</string>
+    <string name="txt_donation_end_description">Uspješno ste donirali udruzi po želji. Transakcija će biti vidljiva na Vašem profilu i lancu ulančanih blokova kroz nekoliko minuta.</string>
+
+
 </resources>

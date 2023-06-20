@@ -46,6 +46,7 @@
             android:textStyle="bold"
             />
         <TextView
+            android:id="@+id/lblDonateStepOneDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/lblDonateStepOne"
@@ -57,6 +58,129 @@
             android:text="@string/txt_donation_step_one_details"
             android:textSize="@dimen/text_description"
             />
+        <TextView
+            android:id="@+id/lblDonateStepTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateStepOneDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/txt_donation_step_two"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/lblDonateStepTwoDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateStepTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/txt_donation_step_two_details"
+            android:textSize="@dimen/text_description"
+            />
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:backgroundTint="@color/dark_blue"
+            android:text="@string/btn_info_wallet"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/lblDonateStepTwoDescription"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/lblDonateStepTwoNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/gray"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/txt_donation_step_two_note"
+            android:textSize="@dimen/text_description"
+            />
+        <ImageView
+            android:id="@+id/imgMetamask"
+            android:layout_width="wrap_content"
+            android:layout_height="800dp"
+            android:paddingHorizontal="@dimen/margin_normal"
+            app:layout_constraintTop_toBottomOf="@id/lblDonateStepTwoNote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/metamask"/>
+        <TextView
+            android:id="@+id/lblDonateStepThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/imgMetamask"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/txt_donation_step_three"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/lblDonateStepThreeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateStepThree"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/txt_donation_step_three_details"
+            android:textSize="@dimen/text_description"
+            />
+        <TextView
+            android:id="@+id/lblDonateEndHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateStepThreeDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/txt_donation_end_heading"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            />
+        <TextView
+            android:id="@+id/lblDonateEndDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateEndHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingBottom="@dimen/margin_large"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/txt_donation_end_description"
+            android:textSize="@dimen/text_description"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imgGift"
+            app:layout_constraintTop_toBottomOf="@+id/lblDonateEndDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:lottie_fileName="giftbox.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
 
 
