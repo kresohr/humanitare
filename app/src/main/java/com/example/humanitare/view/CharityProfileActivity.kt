@@ -29,7 +29,7 @@ class CharityProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_charity_profile)
-        var maticBalance = 0.0;
+        var maticBalance: Double
         val imgCharityLogo = findViewById<ImageView>(R.id.imgCharityProfileLogo)
         val lblCharityName = findViewById<TextView>(R.id.lblCharityProfileTitle)
         val lblCharityDescription = findViewById<TextView>(R.id.lblCharityProfileDescription)
@@ -68,13 +68,15 @@ class CharityProfileActivity : AppCompatActivity() {
                     val result = balanceResponse?.result
 
                     if (result != null && result != "Invalid API Key") {
-                        // Convert from "WEI" to Matic
                         txtError.visibility = View.GONE
                         imgLoading.visibility = View.GONE
                         txtErrorReminder.visibility = View.GONE
                         txtCharityBalance.visibility = View.VISIBLE
+
+                        // Convert from "WEI" to Matic
                         val convertedMatic = result.toDouble() / 1e18
                         val formattedMatic = String.format("%.5f", convertedMatic)
+
                         txtCharityBalance.text = formattedMatic + " MATIC"
                         maticBalance = formattedMatic.toDouble()
                         Log.d("SUCCESS", result)
@@ -88,14 +90,12 @@ class CharityProfileActivity : AppCompatActivity() {
                                     val maticUSDValue = apiResponse?.result?.maticusd
                                     // Use the Matic USD value as needed
                                     if (maticUSDValue != null) {
-                                        Log.d("VRIJEDNOST", maticUSDValue)
                                         val decimalFormat = DecimalFormat("#.##")
                                         val balanceValue = decimalFormat.format(calculateBalance(maticBalance, maticUSDValue.toDouble()))
                                         lblCharityAccountBalanceUSD.text = "("+balanceValue.toString() + "$)"
                                     }
                                 } else {
                                     // Handle unsuccessful response for Matic USD API call
-                                    Log.d("VRIJEDNOST", "fail")
                                 }
                             }
 
@@ -122,29 +122,6 @@ class CharityProfileActivity : AppCompatActivity() {
                 txtErrorReminder.visibility = View.VISIBLE
             }
         })
-
-//        val callMaticUSD: Call<MaticUSD> = apiService.getMaticUSD()
-//        callMaticUSD.enqueue(object : Callback<MaticUSD> {
-//            override fun onResponse(call: Call<MaticUSD>, response: Response<MaticUSD>) {
-//                if (response.isSuccessful) {
-//                    val apiResponse: MaticUSD? = response.body()
-//                    val maticUSDValue = apiResponse?.result?.maticusd
-//                    // Use the Matic USD value as needed
-//                    if (maticUSDValue != null) {
-//                        Log.d("VRIJEDNOST", maticUSDValue)
-//                        lblCharityAccountBalanceUSD.text = calculateBalance(maticBalance,maticUSDValue.toDouble()).toString()
-//
-//                    }
-//                } else {
-//                    // Handle unsuccessful response for Matic USD API call
-//                    Log.d("VRIJEDNOST", "fail")
-//                }
-//            }
-
-//            override fun onFailure(call: Call<MaticUSD>, t: Throwable) {
-//                // Handle failure for Matic USD API call
-//            }
-//        })
 
         btnTransactionHistory.setOnClickListener {
             val explorerUrl = "https://polygonscan.com/address/"
@@ -174,7 +151,7 @@ class CharityProfileActivity : AppCompatActivity() {
 
         btnCopyAddress.setOnClickListener {
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clipData = ClipData.newPlainText("organi", organizationWalletAddress)
+            val clipData = ClipData.newPlainText("walletaddress", organizationWalletAddress)
             clipboardManager.setPrimaryClip(clipData)
 
             Toast.makeText(this, "Adresa uspješno kopirana", Toast.LENGTH_SHORT).show()
