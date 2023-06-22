@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.humanitare.R
 import com.example.humanitare.adapter.RecyclerViewAdapter
 import com.example.humanitare.model.AccountTransactions
@@ -33,6 +34,9 @@ class ProfileActivity : AppCompatActivity() {
         val imgEditWallet = findViewById<ImageView>(R.id.imgEditWallet)
         val lblTransaction = findViewById<TextView>(R.id.lblTransactions)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewTransactions)
+        val txtProfileError = findViewById<TextView>(R.id.txtProfileError)
+        val txtErrorReminder = findViewById<TextView>(R.id.txtErrorReminder)
+        val imgProfileLoading = findViewById<LottieAnimationView>(R.id.imgProfileLoading)
 
         // Organization wallets go here.
         val listOfOrganizationWallets = listOf("0x412a732c8688666de52092dab8fd7b2a5a03940d","0x0e57bdf109277cb6101932c8fa81ebe8e03548c1","0xbca47ae338c994eed941c78e74f4c431515d3875","0xcd77c325f71291f9a0a482fe58c1a3c5088d3d5a","0xa2acd30a8c1be2dc1fc62a547601c6a6e805b2e1")
@@ -54,18 +58,22 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
 
-        getWallet()
+        fun makeApiCall(walletAddress: String) {
+            val endBlock = "99999999"
+            val offset = "100" // The number of transactions fetched per page
+            val page = "1"
+            val sort = "desc"
+            val startBlock = "0"
 
-        // API Call for transactions
-        val endBlock = "99999999"
-        val offset = "100" // The number of transactions fetched per page
-        val page = "1"
-        val sort = "desc"
-        val startBlock = "0"
-
-        if (!txtWallet.text.isNullOrEmpty()){
             val apiService: ApiInterface = ApiClient.getInstance().create(ApiInterface::class.java)
-            val call: Call<AccountTransactions> = apiService.getAccountTransactions(address = txtWallet.text.toString(), endBlock = endBlock, offset = offset, page = page, sort = sort, startBlock = startBlock)
+            val call: Call<AccountTransactions> = apiService.getAccountTransactions(
+                address = walletAddress,
+                endBlock = endBlock,
+                offset = offset,
+                page = page,
+                sort = sort,
+                startBlock = startBlock
+            )
 
             call.enqueue(object : Callback<AccountTransactions> {
                 override fun onResponse(
@@ -80,24 +88,28 @@ class ProfileActivity : AppCompatActivity() {
                             val lowercaseTransactionTo = transaction.to.lowercase()
                             listOfOrganizationWallets.contains(lowercaseTransactionTo)
                         }
-
                         val adapter = RecyclerViewAdapter(listOfValidTransactions)
                         val layoutManager = LinearLayoutManager(this@ProfileActivity)
                         recyclerView.layoutManager = layoutManager
                         recyclerView.adapter = adapter
                         adapter.notifyDataSetChanged()
+                        imgProfileLoading.visibility = View.GONE
                     } else {
-                        // Handle the API error
+                        txtProfileError.visibility = View.VISIBLE
+                        txtErrorReminder.visibility = View.VISIBLE
                     }
                 }
 
                 override fun onFailure(call: Call<AccountTransactions>, t: Throwable) {
-                    // Handle the network failure
+                    txtProfileError.visibility = View.VISIBLE
+                    txtErrorReminder.visibility = View.VISIBLE
                 }
             })
         }
 
+        getWallet()
 
+        makeApiCall(txtWallet.text.toString())
 
         imgEditWallet.setOnClickListener {
             btnSaveWallet.visibility = View.VISIBLE
@@ -120,14 +132,14 @@ class ProfileActivity : AppCompatActivity() {
                 btnSaveWallet.visibility = View.GONE
                 txtWallet.clearFocus()
                 getWallet()
+                imgProfileLoading.visibility = View.VISIBLE
+                makeApiCall(txtWallet.text.toString())
             }
-
         }
 
         lblNoWallet.setOnClickListener {
             val intent = Intent(this, TutorialActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

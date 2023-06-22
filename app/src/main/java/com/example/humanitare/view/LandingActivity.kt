@@ -16,8 +16,8 @@ class LandingActivity : AppCompatActivity() {
 
         // Check if it's first launch, otherwise launch CharityListActivity
         val sharedPreferences = getSharedPreferences("isFirstLaunch", MODE_PRIVATE)
-        val isFirstLaunch = sharedPreferences.getBoolean("isFirstLaunch", true)
-
+//        val isFirstLaunch = sharedPreferences.getBoolean("isFirstLaunch", true)
+        val isFirstLaunch = true
         if (isFirstLaunch) {
             setContentView(R.layout.activity_landing)
             txtWelcomeWalletInput = findViewById(R.id.txtWelcomeWalletInput)
@@ -44,7 +44,6 @@ class LandingActivity : AppCompatActivity() {
                     startActivity(Intent(this, CharityListActivity::class.java))
                     finish()
                 }
-
             }
 
             btnSkip.setOnClickListener {

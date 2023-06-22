@@ -95,12 +95,13 @@ class CharityProfileActivity : AppCompatActivity() {
                                         lblCharityAccountBalanceUSD.text = "("+balanceValue.toString() + "$)"
                                     }
                                 } else {
-                                    // Handle unsuccessful response for Matic USD API call
+                                    Toast.makeText(this@CharityProfileActivity, "Problem s dohvaćanjem MATIC vrijednosti", Toast.LENGTH_SHORT).show()
                                 }
                             }
 
                             override fun onFailure(call: Call<MaticUSD>, t: Throwable) {
-                                // Handle failure for Matic USD API call
+                                Toast.makeText(this@CharityProfileActivity, "Problem s dohvaćanjem MATIC vrijednosti", Toast.LENGTH_SHORT).show()
+                                Log.d("ERROR", "Cannot fetch MATIC USD value from API")
                             }
                         })
                     } else {
@@ -109,14 +110,13 @@ class CharityProfileActivity : AppCompatActivity() {
                         Log.d("REZULTAT", "Cannot fetch API, Wrong key?")
                     }
                 } else {
-                    Log.d("ERROR", "Unsuccessful request.")
+                    Log.d("ERROR", "Cannot fetch Matic Balance from API")
                     txtError.visibility = View.VISIBLE
                     txtErrorReminder.visibility = View.VISIBLE
                 }
             }
 
             override fun onFailure(call: Call<MaticBalance>, t: Throwable) {
-                // Handle unsuccessful response
                 Log.d("ERROR", "Cannot reach API service.")
                 txtError.visibility = View.VISIBLE
                 txtErrorReminder.visibility = View.VISIBLE
@@ -126,7 +126,6 @@ class CharityProfileActivity : AppCompatActivity() {
         btnTransactionHistory.setOnClickListener {
             val explorerUrl = "https://polygonscan.com/address/"
             val url = explorerUrl + organizationWalletAddress
-
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
@@ -153,10 +152,8 @@ class CharityProfileActivity : AppCompatActivity() {
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clipData = ClipData.newPlainText("walletaddress", organizationWalletAddress)
             clipboardManager.setPrimaryClip(clipData)
-
             Toast.makeText(this, "Adresa uspješno kopirana", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun calculateBalance(balance: Double,maticUSDValue: Double): Double {
